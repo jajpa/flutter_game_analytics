@@ -3,7 +3,7 @@
 # Run `pod lib lint fluttergameanalytics.podspec' to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'fluttergameanalytics'
+  s.name             = 'flutter_game_analytics'
   s.version          = '0.0.1'
   s.summary          = 'A new Flutter plugin for GameAnalytics'
   s.description      = <<-DESC
