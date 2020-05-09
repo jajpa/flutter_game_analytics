@@ -1,8 +1,8 @@
-name: fluttergameanalytics
+name: flutter_game_analytics
 description: A new Flutter plugin for GameAnalytics
 version: 0.0.1
-author:
-homepage:
+author: Joshua Matta
+homepage: https://github.com/joshmatta/flutter_game_analytics
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
