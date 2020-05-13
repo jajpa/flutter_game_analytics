@@ -13,4 +13,9 @@ class FlutterGameAnalytics {
       {'game_key': gameKey, 'secret_key': secretKey},
     );
   }
+
+  static Future trackEvent(String event) async {
+    assert(event != null);
+    return await _channel.invokeMethod('event', event);
+  }
 }

@@ -52,6 +52,19 @@ public class FluttergameanalyticsPlugin : FlutterPlugin, MethodCallHandler, Acti
                 initializeGameAnalytics(activity, gameKey, secretKey)
                 result.success(true)
             }
+            "event" -> {
+                val event = call.arguments<String>()
+                if (event==null) {
+                    result.error(
+                            "KEY_ERROR",
+                            "event should not be null",
+                            null
+                    )
+                    return
+                }
+                trackEvent(event)
+                result.success(true)
+            }
             else -> {
                 result.notImplemented()
             }
@@ -67,6 +80,10 @@ public class FluttergameanalyticsPlugin : FlutterPlugin, MethodCallHandler, Acti
         val info: PackageInfo = pm.getPackageInfo(activity.packageName, 0)
         GameAnalytics.configureBuild(info.versionName)
         GameAnalytics.initializeWithGameKey(activity, gameKey, secretKey)
+    }
+
+    private fun trackEvent(event:String){
+        GameAnalytics.addDesignEventWithEventId(event)
     }
 
     override fun onDetachedFromActivity() {
