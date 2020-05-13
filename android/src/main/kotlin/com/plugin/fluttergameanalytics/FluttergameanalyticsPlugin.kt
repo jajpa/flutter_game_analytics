@@ -20,7 +20,7 @@ import io.flutter.plugin.common.PluginRegistry.Registrar
 public class FluttergameanalyticsPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
 
     private lateinit var channel: MethodChannel
-    private lateinit var activity: Activity
+    lateinit var activity: Activity
 
 
     override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
